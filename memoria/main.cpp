@@ -9,7 +9,7 @@ int main(){
     int processos, linhas, j=0, i=0, h, sequencia=0;    
     string nomeProcesso, nomeInstrucao;
     
-    memorias memorizu;// = new memorias();
+    memorias *memorizu = new memorias();
     pagina alocada; 
             
 	cout << "hello world" << endl;	
@@ -30,19 +30,19 @@ int main(){
           // Lançando as páginas do programa na memória
           while(i < linhas){             
              alocada.processo = nomeProcesso;
-             alocada.ordenacao = sequencia;
+             alocada.ordenacao = sequencia;             
              
              // Alocando instruções à página
-             for(h=0; h < pagina::tamanhoPagina && i < linhas; h++, i++){                 
-                 if(h+1 == pagina::tamanhoPagina){
+             for(h=0; h < alocada.tamanhoPagina && i < linhas; h++, i++){                 
+                 if(h+1 == alocada.tamanhoPagina){
                    nomeInstrucao = "finito!";
                  }else{                        
                     nomeInstrucao = "Instrucao " + i;
                  }
-                 alocada.comando.push_back(nomeInstrucao);                
+                 alocada.comando.push_back(nomeInstrucao); 
              }
              sequencia++;                
-             memorizu.memoriaVirtual.push_back(alocada);                             
+             memorizu->memoriaVirtual.push_back(alocada);                             
              alocada.comando.clear();
           }                   
     }

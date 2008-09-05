@@ -8,7 +8,7 @@
 class processador{
       
       public:
-             processador(memorias controle);
+             processador(memorias *alocar);
              void run();      
              
              void carregarEstado(int endereco);             
@@ -21,6 +21,7 @@ class processador{
               
               gerenciadorMemoria memManager;
               gerenciadorProcessos proManager;
-              memorias memoriaz;
+              
+              memorias *memorizu;
 };
 #endif
