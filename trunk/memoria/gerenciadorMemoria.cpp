@@ -3,12 +3,6 @@
 
 
 
-int gerenciadorMemoria::criarProgramas(string nome, int tamanho){     
-    
-    
-    
-    
-    
-    
+int gerenciadorMemoria::criarProgramas(string nome, int tamanho){    
     
 };

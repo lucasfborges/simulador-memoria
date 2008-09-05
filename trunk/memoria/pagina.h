@@ -6,5 +6,6 @@ class pagina{
  
 	public:
 		std::list<std::string> comando;
-		int sequencia;
+		string processo;
+        int ordenacao;
 };
