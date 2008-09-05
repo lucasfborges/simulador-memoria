@@ -2,7 +2,7 @@ Classes
 - paginas                 -- classe definindo as características da página
 - memorias                -- as listas de memória física e  virtual
 - gerenciadorProcessos    --  cuidando da alocação das páginas
-- gerenciadorMemoria      --  tradução de endereços lógico X físico (além de, exclusivamente no 			      nosso caso, montar os programas)
+- gerenciadorMemoria      --  tradução de endereços lógico X físico (além de, exclusivamente no nosso caso, montar os programas)
 - processador             -- ele requisitará as instruções de acordo com o "endereço" disponível
 
 
