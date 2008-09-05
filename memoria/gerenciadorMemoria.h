@@ -11,7 +11,7 @@ class gerenciadorMemoria{
               
 	public:
 		//método de tradução endereço lógico X físico
-		std::string resolverEndereco(int endereco);
+		string resolverEndereco(int endereco);
 		
 	private:
          memorias memoriaz;

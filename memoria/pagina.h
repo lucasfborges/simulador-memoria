@@ -20,8 +20,5 @@ class pagina{
         int ordenacao;
         
 };
-
-
-
 #endif
  

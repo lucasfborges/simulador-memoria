@@ -28,25 +28,23 @@ int main(){
           cin >> linhas;
                              
           // Lançando as páginas do programa na memória
-          while(i < linhas){
-        	  alocada.processo = nomeProcesso;
-              alocada.ordenacao = sequencia;
-              
-              //std::cout << "Debug me." << endl;   
-              //system("pause");
-              // Alocando instruções à página
-              for(h=0; h < pagina::tamanhoPagina && i < linhas; h++, i++){
-            	  if(h+1 >= pagina::tamanhoPagina){
-            		  nomeInstrucao = "finito!";
-            	  }else{
-            		  nomeInstrucao = "Instrucao " + i;
-            	  }
-            	  alocada.comando.push_back(nomeInstrucao);                
-              }
-              sequencia++;
-              memorizu.memoriaVirtual.push_back(alocada);
-              alocada.comando.clear();
-          }
+          while(i < linhas){             
+             alocada.processo = nomeProcesso;
+             alocada.ordenacao = sequencia;
+             
+             // Alocando instruções à página
+             for(h=0; h < pagina::tamanhoPagina && i < linhas; h++, i++){                 
+                 if(h+1 == pagina::tamanhoPagina){
+                   nomeInstrucao = "finito!";
+                 }else{                        
+                    nomeInstrucao = "Instrucao " + i;
+                 }
+                 alocada.comando.push_back(nomeInstrucao);                
+             }
+             sequencia++;                
+             memorizu.memoriaVirtual.push_back(alocada);                             
+             alocada.comando.clear();
+          }                   
     }
     
     // Construindo processador, inserindo-lhe as memórias e rodando-o
