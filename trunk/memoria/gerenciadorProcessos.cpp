@@ -5,6 +5,6 @@ std::string gerenciadorProcessos::iniciarPaginas(memorias alocadas){
        
 };
 
-void gerenciadorProcessos::carregarPaginas(std::string nomeProcesso){
+void gerenciadorProcessos::carregarPaginas(string nomeProcesso){
        
 };

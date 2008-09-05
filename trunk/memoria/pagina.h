@@ -4,22 +4,24 @@
 #include <list>
 #include <iostream>
 
-class pagina{
+using namespace std;
 
-	public:
-        pagina(){
-           pagina::tamanhoPagina = 50;
-        }
-
+class pagina{        
+ 
+	public:           
+         pagina(){
+            pagina::tamanhoPagina = 50;                  
+         }                    
+ 
         static int tamanhoPagina;               
-
+        
         std::list<std::string> comando;
-		std::string processo;
+		string processo;
         int ordenacao;
-
+        
 };
 
-//
+
 
 #endif
  
