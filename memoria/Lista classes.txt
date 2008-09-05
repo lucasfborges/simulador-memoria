@@ -1,4 +1,13 @@
 Classes 
+<<<<<<< .mine
+- paginas                 -- classe definindo as características da página
+- memorias                -- as listas de memória física e  virtual
+- listas? 
+- gerenciadorProcessos    --  cuidando da alocação das páginas
+- gerenciadorMemoria      --  tradução de endereços lógico X físico (além de, exclusivamente no 			      nosso caso, montar os programas)
+
+
+=======
 - paginas                 -- classe definindo as características da página
 - memorias                -- as listas de memória física e  virtual
 - gerenciadorProcessos    --  cuidando da alocação das páginas
@@ -6,4 +15,4 @@ Classes
 - processador             -- ele requisitará as instruções de acordo com o "endereço" disponível
 
 
-- a main ficará responsável por receber os dados iniciais e criar os programas, com a ajuda do método especial do gerenciadorMemoria.
+- a main ficará responsável por receber os dados iniciais e criar os programas, com a ajuda do método especial do gerenciadorMemoria.>>>>>>> .r8

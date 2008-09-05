@@ -1,9 +1,11 @@
 #include <list>
 #include "pagina.h"
 
-class memorias{
-       
+class memorias{       
 	public:
-		std::list<pagina> memoriaVirtual;
-		std::list<pagina> memoriaFisica;	
+		 int inserirPagina	
+		
+	private:
+         std::list<pagina> memoriaVirtual;
+		 std::list<pagina> memoriaFisica;
 };
