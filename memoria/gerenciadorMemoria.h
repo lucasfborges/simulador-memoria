@@ -10,6 +10,6 @@ class gerenciadorMemoria{
         //static map<int, int>  hashTable;
         
         //método de tradução endereço lógico X físico		
-        string resolverEndereco(int endereco);         
+        string resolverEndereco(int endereco, string processoAtivo);         
 };
 #endif
