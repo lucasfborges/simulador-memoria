@@ -1,7 +1,7 @@
 [Project]
 FileName=Simulador Gerencia Memoria.dev
 Name=Project1
-UnitCount=8
+UnitCount=10
 Type=1
 Ver=1
 ObjFiles=
@@ -119,6 +119,26 @@ BuildCmd=
 
 [Unit8]
 FileName=processador.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit9]
+FileName=gerenciadorProcessos.h
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit10]
+FileName=gerenciadorProcessos.cpp
 CompileCpp=1
 Folder=
 Compile=1

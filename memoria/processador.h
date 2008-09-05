@@ -1,9 +1,16 @@
+#ifndef PROCESSADOR_H_
+#define PROCESSADOR_H_
+
+#include "gerenciadorMemoria.h"
+#include "gerenciadorProcessos.h"
 #include <list>
 
 class processador{
       
       public:
-             processador(gerenciadorMemoria controle);
+             processador(memorias controle);
+             void run();      
+             
              void carregarEstado(int endereco);             
              string carregarInstrucao(int endereco);
              int carregarPaginas(string processo);             
@@ -12,4 +19,8 @@ class processador{
               int endereco;
               string nomeProcesso;             
               
+              gerenciadorMemoria memManager;
+              gerenciadorProcessos proManager;
+              memorias memoriaz;
 };
+#endif

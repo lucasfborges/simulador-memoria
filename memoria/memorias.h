@@ -1,11 +1,12 @@
+#ifndef MEMORIAS_H_
+#define MEMORIAS_H_
+
 #include <list>
 #include "pagina.h"
 
 class memorias{       
 	public:
-		 int inserirPagina(pagina alocando);	
-		
-	private:
-         std::list<pagina> memoriaVirtual;
-		 std::list<pagina> memoriaFisica;
+           std::list<pagina> memoriaVirtual;
+		   std::list<pagina> memoriaFisica;
 };
+#endif
