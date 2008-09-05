@@ -1,7 +1,7 @@
 #include "gerenciadorProcessos.h"
 #include "memorias.h"
 
-std::string gerenciadorProcessos::iniciarPaginas(memorias alocadas){
+string gerenciadorProcessos::iniciarPaginas(memorias alocadas){
        
 };
 

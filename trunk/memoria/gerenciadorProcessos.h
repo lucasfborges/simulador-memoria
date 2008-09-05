@@ -4,11 +4,12 @@
 #include <iostream>
 #include "memorias.h"
 
+using namespace std;
+
 class gerenciadorProcessos{
       public:
-             std::string iniciarPaginas(memorias alocadas); 
-             // não inclui endereço pelo fato dessa 'demo' usar apenas um processo
-             void carregarPaginas(std::string nomeProcesso);
+             string iniciarPaginas(memorias alocadas);      
+             void carregarPaginas(string nomeProcesso);          // não inclui endereço pelo fato dessa 'demo' usar apenas um processo
             
       
 };
