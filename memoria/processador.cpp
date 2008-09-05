@@ -7,10 +7,7 @@ using namespace std;
 processador::processador(memorias controle){   
    memoriaz = controle;
    endereco = 0;
-//   memManager = new gerenciadorMemoria();
-//   proManager = new gerenciadorProcessos();
-};
-                
+};                
 
 void processador::run(){
      string instrucao;     
