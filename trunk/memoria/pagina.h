@@ -8,7 +8,11 @@ using namespace std;
 
 class pagina{        
  
-	public:
+	public:           
+         pagina(){
+            pagina::tamanhoPagina = 50;                  
+         }                    
+ 
         static int tamanhoPagina;               
         
         std::list<std::string> comando;
@@ -16,8 +20,7 @@ class pagina{
         int ordenacao;
         
 };
-
-int pagina::tamanhoPagina = 50;
+//
 
 #endif
  
