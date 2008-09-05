@@ -1,5 +1,5 @@
-#ifndef GERENCADORMEMORIA_H_
-#define GERENCADORMEMORIA_H_
+#ifndef GERENCIADORMEMORIA_H_
+#define GERENCIADORMEMORIA_H_
 
 #include <list>
 #include "pagina.h"
