@@ -10,7 +10,7 @@ class pagina{
  
 	public:           
          pagina(){
-            pagina::tamanhoPagina = 50;                  
+            pagina::tamanhoPagina = 50;
          }                    
  
         static int tamanhoPagina;               
