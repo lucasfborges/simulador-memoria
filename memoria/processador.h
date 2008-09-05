@@ -12,15 +12,15 @@ class processador{
              void run();      
              
              void carregarEstado(int endereco);             
-             string carregarInstrucao(int endereco);
-             int carregarPaginas(string processo);             
+             std::string carregarInstrucao(int endereco);
+             int carregarPaginas(std::string processo);             
              
       private:
-              int endereco;
-              string nomeProcesso;             
-              
-              gerenciadorMemoria memManager;
-              gerenciadorProcessos proManager;
-              memorias memoriaz;
+             int endereco;
+             std::string nomeProcesso;             
+
+             gerenciadorMemoria memManager;
+             gerenciadorProcessos proManager;
+             memorias memoriaz;
 };
 #endif
