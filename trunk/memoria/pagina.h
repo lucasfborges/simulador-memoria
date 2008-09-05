@@ -1,11 +1,23 @@
-#include <list>
+#ifndef PAGINA_H_
+#define PAGINA_H_
 
-class pagina{
-      
-    static public int tamanhoPagina = 50; 
+#include <list>
+#include <iostream>
+
+using namespace std;
+
+class pagina{        
  
 	public:
-		std::list<std::string> comando;
+        static int tamanhoPagina;               
+        
+        std::list<std::string> comando;
 		string processo;
         int ordenacao;
+        
 };
+
+int pagina::tamanhoPagina = 50;
+
+#endif
+ 

@@ -1,5 +1,9 @@
+#ifndef GERENCADORMEMORIA_H_
+#define GERENCADORMEMORIA_H_
+
 #include <list>
 #include "pagina.h"
+#include "memorias.h"
 
 class gerenciadorMemoria{
        
@@ -10,6 +14,7 @@ class gerenciadorMemoria{
 		string resolverEndereco(int endereco);
 		
 	private:
-         memorias memorias;
+         memorias memoriaz;
          
 };
+#endif
