@@ -1,8 +1,6 @@
 #include "gerenciadorMemoria.h"
 #include "pagina.h"
 
-string gerenciadorMemoria::resolverEndereco(int endereco){
-
-       
+std::string gerenciadorMemoria::resolverEndereco(int endereco){
        
 };
