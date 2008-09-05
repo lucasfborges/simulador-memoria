@@ -3,7 +3,7 @@
 
 class memorias{       
 	public:
-		 int inserirPagina	
+		 int inserirPagina(pagina alocando);	
 		
 	private:
          std::list<pagina> memoriaVirtual;
