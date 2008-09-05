@@ -4,15 +4,18 @@
 using namespace std;
 
 
-processador::processador(memorias controle){   
-   memoriaz = controle;
+processador::processador(memorias *alocar){   
+   memorizu = alocar;   
    endereco = 0;
 };                
 
 void processador::run(){
      string instrucao;     
      
-     nomeProcesso = proManager.iniciarPaginas(memoriaz);
+     cout << "Im fine, thanks." << endl;
+     system("pause");
+     
+     nomeProcesso = proManager.iniciarPaginas();
      
      do{
         instrucao = memManager.resolverEndereco(endereco);

@@ -10,12 +10,12 @@ class pagina{
  
 	public:           
          pagina(){
-            pagina::tamanhoPagina = 50;
-         }                    
+            tamanhoPagina = 50;                  
+         }                   
  
-        static int tamanhoPagina;               
+        int tamanhoPagina;               
         
-        std::list<std::string> comando;
+        list<string> comando;
 		string processo;
         int ordenacao;
         
