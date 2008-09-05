@@ -15,12 +15,12 @@ void processador::run(){
      cout << "Im fine, thanks." << endl;
      system("pause");
      
-     nomeProcesso = proManager.iniciarPaginas();
+     nomeProcesso = proManager.iniciarPaginas(memorizu);
      
      do{
-        instrucao = memManager.resolverEndereco(endereco);
+        instrucao = memManager.resolverEndereco(endereco, nomeProcesso);
         if(instrucao == "sem paginas"){
-           proManager.carregarPaginas(nomeProcesso);
+           proManager.carregarPaginas(memorizu, nomeProcesso, endereco);
            std::cout << "Troca de páginas concluida." << endl;
            system("pause");
         }else{

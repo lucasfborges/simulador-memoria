@@ -8,8 +8,8 @@ using namespace std;
 
 class gerenciadorProcessos{
       public:
-             string iniciarPaginas();      
-             void carregarPaginas(string nomeProcesso);          // não inclui endereço pelo fato dessa 'demo' usar apenas um processo            
+             string iniciarPaginas(memorias *memIniciadas);      
+             void carregarPaginas(memorias *realocar, string nomeProcesso, int endereco);          // não inclui endereço pelo fato dessa 'demo' usar apenas um processo            
       
       private:
               memorias tabela;

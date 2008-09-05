@@ -11,13 +11,13 @@ class memorias{
 	public:
            memorias(){
               limiteFisica = 16;
-              limiteAtual = 0;
+              estadoFisica = 0;
            };           
            
            list<pagina> memoriaVirtual,
                         memoriaFisica;
 		   
 		   int limiteFisica,
-               limiteAtual; 
+               estadoFisica; 
 };
 #endif
