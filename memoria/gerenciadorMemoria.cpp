@@ -1,12 +1,17 @@
 #include "gerenciadorMemoria.h"
 #include "pagina.h"
 
+//lance da divisao
 int* gerenciadorMemoria::resolverEndereco(int endereco, string processoAtivo){
-      int vezes[2];  
+       int resultado[2];
        
+       pagina obj;// = new pagina();
        
+       //quociente da divisao
+       resultado[0] = tabela[(endereco/obj.tamanhoPagina)];
+       //resto da divisao
+       resultado[1] = (endereco%obj.tamanhoPagina);
        
-       
-       
-       return vezes;       
+       return resultado;
+       //return "finito!";
 };

@@ -10,6 +10,7 @@ processador::processador(memorias *alocar){
 };                
 
 void processador::run(){
+
      string instrucao = "finito!";     
      int *enderecoFisico;
      pagina sidePagina;
