@@ -1,12 +1,12 @@
 #include "gerenciadorMemoria.h"
 #include "pagina.h"
 
-string gerenciadorMemoria::resolverEndereco(int endereco, string processoAtivo){
+int* gerenciadorMemoria::resolverEndereco(int endereco, string processoAtivo){
+      int vezes[2];  
        
        
        
        
        
-       
-       return "finito!";       
+       return vezes;       
 };

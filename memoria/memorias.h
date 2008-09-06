@@ -3,6 +3,7 @@
 
 #include <list>
 #include <iostream>
+#include <vector>
 #include "pagina.h"
 
 using namespace std;
@@ -14,8 +15,8 @@ class memorias{
               estadoFisica = 0;
            };           
            
-           list<pagina> memoriaVirtual,
-                        memoriaFisica;
+           vector<pagina> memoriaVirtual;
+           vector<pagina> memoriaFisica;
 		   
 		   int limiteFisica,
                estadoFisica; 
