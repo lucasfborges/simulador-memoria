@@ -3,6 +3,7 @@
 
 #include <list>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -15,7 +16,7 @@ class pagina{
  
         int tamanhoPagina;               
         
-        list<string> comando;
+        vector<string> comando;
 		string processo;
         int ordenacao;
         

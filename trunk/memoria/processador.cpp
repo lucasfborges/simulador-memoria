@@ -10,21 +10,31 @@ processador::processador(memorias *alocar){
 };                
 
 void processador::run(){
-     string instrucao;     
+     string instrucao = "finito!";     
+     int *enderecoFisico;
+     pagina sidePagina;
      
      cout << "Im fine, thanks." << endl;
      system("pause");
      
-     nomeProcesso = proManager.iniciarPaginas(memorizu);
-     
+     // Inicializa a paginação, recebendo o nome do primeiro processo a executar
+     nomeProcesso = proManager.iniciarPaginas(memorizu);     
      do{
-        instrucao = memManager.resolverEndereco(endereco, nomeProcesso);
-        if(instrucao == "sem paginas"){
+        // Envia o endereço lógico, recebe o físico - ou um sinal de erro neste
+        enderecoFisico = memManager.resolverEndereco(endereco, nomeProcesso);  
+        
+        // Se a página não foi encontrada, carrega páginas para a memória física      
+        if(enderecoFisico[0] == -1){
            proManager.carregarPaginas(memorizu, nomeProcesso, endereco);
            std::cout << "Troca de páginas concluida." << endl;
            system("pause");
+           
+        // Senão, carrega a instrução da memória física e "executa"
         }else{
-           std::cout << instrucao << endl << endl;               // execução de instrução
+           sidePagina = memorizu->memoriaFisica[enderecoFisico[0]];
+           instrucao = sidePagina.comando[enderecoFisico[1]];
+           // "execução" de instrução
+           std::cout << instrucao << endl << endl;               
            endereco++;
         }
      }while(instrucao != "finito!");     

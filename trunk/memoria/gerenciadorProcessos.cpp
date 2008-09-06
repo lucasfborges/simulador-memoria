@@ -1,5 +1,6 @@
 #include "gerenciadorProcessos.h"
 #include "memorias.h"
+#include <vector>
 
 string gerenciadorProcessos::iniciarPaginas(memorias *memIniciadas){
        int estado = memIniciadas->estadoFisica;       
@@ -7,7 +8,7 @@ string gerenciadorProcessos::iniciarPaginas(memorias *memIniciadas){
        pagina sidePagina;
               
        // retira-se a primeira página da lista da memória virtual
-       //sidePagina = memIniciadas->memoriaVirtual[0];
+       sidePagina = memIniciadas->memoriaVirtual[0];
        
        // retira-se o nome do processo dessa página, que será o primeiro a executar
        primeiroProcesso = sidePagina.processo;
@@ -17,14 +18,14 @@ string gerenciadorProcessos::iniciarPaginas(memorias *memIniciadas){
        
        // alocação de páginas da memória virtual para a física       
        while(estado < memIniciadas->limiteFisica  &&  estado < memIniciadas->memoriaVirtual.size()){
-          //sidePagina = memIniciadas->memoriaVirtual[estado];
+          sidePagina = memIniciadas->memoriaVirtual[estado];
           
           // checa se a página em questão ainda pertence ao mesmo processo
           if(sidePagina.processo != processoCorrente){
              break;                                 
           }else{
              // insere página da memória virtual na física
-             //memIniciadas->memoriaFisica.insert(estado, memIniciadas->memoriaVirtual[estado]);
+             memIniciadas->memoriaFisica[estado] =  memIniciadas->memoriaVirtual[estado];
              
              // [Check] Atualizar o estado da tabela de tradução do gerenciador de memória
              estado++;             
@@ -41,17 +42,17 @@ void gerenciadorProcessos::carregarPaginas(memorias *realocar, string nomeProces
      int j=0, ultimaPagina;
      
      // definindo a última página desse processo disponível na memória física
-     ultimaPagina = endereco % sidePagina.tamanhoPagina;
+     ultimaPagina = endereco / sidePagina.tamanhoPagina;
      
      for (; j < realocar->limiteFisica; j++, ultimaPagina++){
-          //sidePagina = realocar->memoriaVirtual[ultimaPagina];
+          sidePagina = realocar->memoriaVirtual[ultimaPagina];
           
           // checa se a página em questão ainda pertence ao mesmo processo
           if(sidePagina.processo != nomeProcesso){
              break;                                 
           }else{
              // insere página da memória virtual na física
-             //memIniciadas->memoriaFisica.insert(j, memIniciadas->memoriaVirtual[estado]);
+             realocar->memoriaFisica[j] = realocar->memoriaVirtual[ultimaPagina];
              
              // [Check] Atualizar o estado da tabela de tradução do gerenciador de memória            
           }          
