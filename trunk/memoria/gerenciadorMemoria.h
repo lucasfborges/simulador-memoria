@@ -27,6 +27,6 @@ class gerenciadorMemoria{
         //método para atualizar tabela
         //parâmetros: pagina que saiu da memoria fisica, pagina que foi
         //colocada na memória fisica, endereço(fisico ou virtual)?
-        void atualizaTabela();
+        void atualizaTabela(int pagina_saiu, int pagina_colocada, int endereco);
 };
 #endif
