@@ -25,6 +25,8 @@ class gerenciadorMemoria{
         int* resolverEndereco(int endereco, string processoAtivo);
         
         //método para atualizar tabela
+        //parâmetros: pagina que saiu da memoria fisica, pagina que foi
+        //colocada na memória fisica, endereço(fisico ou virtual)?
         void atualizaTabela();
 };
 #endif
