@@ -13,7 +13,10 @@ void processador::run(){
 
      string instrucao = "finito!";     
      int *enderecoFisico;
-     pagina sidePagina;
+     pagina sidePagina;     
+     
+     // Inicializando ponteiro
+     enderecoFisico = (int*) malloc(2*sizeof(int));
           
      // Inicializa a paginação, recebendo o nome do primeiro processo a executar
      nomeProcesso = proManager.iniciarPaginas(memorizu, memManager);     
@@ -35,7 +38,12 @@ void processador::run(){
            
         // Senão, carrega a instrução da memória física e "executa"
         }else{
-           cout << "thanks." << endl;
+            cout << "For wut?" << endl;
+            
+            cout << memorizu->memoriaFisica[0].processo << " Soah  " << endl;
+              
+              
+           cout << "thanks for this: " << enderecoFisico[0] << "  e isso: " << enderecoFisico[1] << endl;
      system("pause");
               
            sidePagina = memorizu->memoriaFisica[enderecoFisico[0]];
