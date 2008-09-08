@@ -6,11 +6,16 @@
 //exemplo insercao no mapa:
 //tabela.insert(std::pair<int,int>(2,7));
 int* gerenciadorMemoria::resolverEndereco(int endereco, string processoAtivo){
-	int resultado[2], paginaCorrente;
+	int resultado[2], paginaCorrente;	
 	
 	pagina obj;// = new pagina();
 	
 	paginaCorrente = endereco/obj.tamanhoPagina;
+	
+	cout << "Im alive.. " << tabela[0] << tabela[1] << tabela [2] << " e.. " << paginaCorrente << endl;
+     system("pause");
+	
+	
 	
 	std::map<int,int>::iterator itr = tabela.lower_bound(paginaCorrente);
 	std::map<int,int>::key_compare cmp = tabela.key_comp();
