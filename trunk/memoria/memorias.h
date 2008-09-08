@@ -19,6 +19,7 @@ class memorias{
            vector<pagina> memoriaFisica;
 		   
 		   int limiteFisica,
-               estadoFisica; 
+               estadoFisica,
+               finalVirtual; 
 };
 #endif
