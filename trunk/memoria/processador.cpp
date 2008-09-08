@@ -1,4 +1,6 @@
 #include "processador.h"
+#include "gerenciadorMemoria.h"
+#include "coordenadas.h"
 #include <iostream>
 
 using namespace std;
@@ -12,23 +14,19 @@ processador::processador(memorias *alocar){
 void processador::run(){
 
      string instrucao = "finito!";     
-     int *enderecoFisico;
+     //int *enderecoFisico;
      pagina sidePagina;     
-     
-     // Inicializando ponteiro
-     enderecoFisico = (int*) malloc(2*sizeof(int));
-          
+     coordenadas enderecoFisico;
+               
      // Inicializa a paginação, recebendo o nome do primeiro processo a executar
-     nomeProcesso = proManager.iniciarPaginas(memorizu, memManager);     
+     nomeProcesso = proManager.iniciarPaginas(memorizu, memManager);    
      
-     cout << "Not so good." << endl;
-     system("pause");
      do{        
         // Envia o endereço lógico, recebe o físico - ou um sinal de erro neste
         enderecoFisico = memManager.resolverEndereco(endereco, nomeProcesso);  
                    
         // Se a página não foi encontrada, carrega páginas para a memória física      
-        if(enderecoFisico[0] == -1){
+        if(enderecoFisico.coord1 == -1){
            cout << "Pretty bad actually." << endl;
      system("pause");
            
@@ -37,22 +35,19 @@ void processador::run(){
            system("pause");
            
         // Senão, carrega a instrução da memória física e "executa"
-        }else{
-            cout << "For wut?" << endl;
-            
-            cout << memorizu->memoriaFisica[0].processo << " Soah  " << endl;
+        }else{              
               
+           cout << "Pagina que chegou: " << enderecoFisico.coord1 << "  e linha: " << enderecoFisico.coord2 << endl << endl;
+           system("pause");
               
-           cout << "thanks for this: " << enderecoFisico[0] << "  e isso: " << enderecoFisico[1] << endl;
-     system("pause");
-              
-           sidePagina = memorizu->memoriaFisica[enderecoFisico[0]];
-           instrucao = sidePagina.comando[enderecoFisico[1]];
+           sidePagina = memorizu->memoriaFisica[enderecoFisico.coord1];
+           instrucao = sidePagina.comando[enderecoFisico.coord2];
            // "execução" de instrução
            std::cout << instrucao << endl << endl;               
            system("pause");
            endereco++;
         }
      }while(instrucao != "finito!");     
+     cout << "I did it! I got the internets, darn it!!"
      system("pause");
 };

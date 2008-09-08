@@ -1,41 +1,39 @@
 #include "gerenciadorMemoria.h"
 #include "pagina.h"
+#include "coordenadas.h"
 
 //lance da divisao
-//retorna -1 na posição 0 do vetor caso o endereço nao esteja mapeado
+//retorna -1 na posição 0 da struct caso o endereço nao esteja mapeado
 //exemplo insercao no mapa:
 //tabela.insert(std::pair<int,int>(2,7));
-int* gerenciadorMemoria::resolverEndereco(int endereco, string processoAtivo){
-	int resultado[2], paginaCorrente;	
+coordenadas gerenciadorMemoria::resolverEndereco(int endereco, string processoAtivo){
+	int paginaCorrente, linhaCorrente;	
+	coordenadas resultado;
 	
-	pagina obj;// = new pagina();
+	pagina obj;	
+	paginaCorrente = endereco/obj.tamanhoPagina;	
+	linhaCorrente =  endereco%obj.tamanhoPagina;
 	
-	paginaCorrente = endereco/obj.tamanhoPagina;
-	
-	cout << "Im alive.. " << tabela[0] << tabela[1] << tabela [2] << " e.. " << paginaCorrente << endl;
-     system("pause");
-	
-	
+	// Imprime página e linha
+	cout << "Numero da pagina: " << tabela[0] << endl << "Numero da linha: " << linhaCorrente << endl << endl;	
 	
 	std::map<int,int>::iterator itr = tabela.lower_bound(paginaCorrente);
 	std::map<int,int>::key_compare cmp = tabela.key_comp();
         
-    cout << "Im fine, first." << endl;
-     system("pause");
     //verifica se o endereço esta mapeado na memoria fisica
     //existe:   
     if(tabela.end() != itr && !cmp(paginaCorrente,(*itr).first)){
     	//quociente da divisao
-    	cout << "Im fine, thanks." << endl;
-     system("pause");
+    	cout << "Encontraram-me" << endl;
+        system("pause");
     	
-    	resultado[0] = tabela[(endereco/obj.tamanhoPagina)];
+    	resultado.coord1 = tabela[(endereco/obj.tamanhoPagina)];
     //nao existe:
 }    else
-    	resultado[0] = -1;
+    	resultado.coord1 = -1;
     	
     //resto da divisao
-    resultado[1] = (endereco%obj.tamanhoPagina);
+    resultado.coord2 = (endereco%obj.tamanhoPagina);
     
     return resultado;
 };

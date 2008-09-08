@@ -13,6 +13,7 @@
 #include <list>
 #include "pagina.h"
 #include "memorias.h"
+#include "coordenadas.h"
 #include <map>
 
 class gerenciadorMemoria{              
@@ -22,7 +23,7 @@ class gerenciadorMemoria{
 		std::map<int,int> tabela;
 		
         //método de tradução endereço lógico X físico
-        int* resolverEndereco(int endereco, string processoAtivo);
+        coordenadas resolverEndereco(int endereco, string processoAtivo);
         
         //método para atualizar tabela
         //parâmetros: pagina que saiu da memoria fisica, pagina que foi
