@@ -10,7 +10,7 @@ int main(){
     string nomeProcesso, nomeInstrucao;
     
     memorias *memorizu = new memorias();
-    pagina alocada; 
+    pagina alocada, troca;
             
 	cout << "hello world" << endl;	
 	cout << "Digite o número de processos a executar: ";
@@ -37,12 +37,13 @@ int main(){
                  if(h+1 == alocada.tamanhoPagina){
                    nomeInstrucao = "finito!";
                  }else{                        
-                    nomeInstrucao = "Instrucao " + i;
+                    nomeInstrucao = "Instrucao ";// + i;
                  }
                  alocada.comando.push_back(nomeInstrucao); 
              }
              sequencia++;                
-             memorizu->memoriaVirtual.push_back(alocada);                             
+             memorizu->memoriaVirtual.push_back(alocada);      
+             memorizu->memoriaFisica.push_back(alocada);           // Rever essa idéia...                         
              alocada.comando.clear();
           }                   
     }

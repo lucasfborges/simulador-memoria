@@ -6,20 +6,27 @@
 //exemplo insercao no mapa:
 //tabela.insert(std::pair<int,int>(2,7));
 int* gerenciadorMemoria::resolverEndereco(int endereco, string processoAtivo){
-	int resultado[2];
+	int resultado[2], paginaCorrente;
 	
-	std::map<int,int>::iterator itr = tabela.lower_bound(endereco);
+	pagina obj;// = new pagina();
+	
+	paginaCorrente = endereco/obj.tamanhoPagina;
+	
+	std::map<int,int>::iterator itr = tabela.lower_bound(paginaCorrente);
 	std::map<int,int>::key_compare cmp = tabela.key_comp();
-       
-    pagina obj;// = new pagina();
-    
+        
+    cout << "Im fine, first." << endl;
+     system("pause");
     //verifica se o endereço esta mapeado na memoria fisica
-    //existe:
-    if(tabela.end() != itr && !cmp(endereco,(*itr).first))
+    //existe:   
+    if(tabela.end() != itr && !cmp(paginaCorrente,(*itr).first)){
     	//quociente da divisao
+    	cout << "Im fine, thanks." << endl;
+     system("pause");
+    	
     	resultado[0] = tabela[(endereco/obj.tamanhoPagina)];
     //nao existe:
-    else
+}    else
     	resultado[0] = -1;
     	
     //resto da divisao
@@ -32,10 +39,15 @@ int* gerenciadorMemoria::resolverEndereco(int endereco, string processoAtivo){
 void gerenciadorMemoria::atualizaTabela(int pagina_saiu, int pagina_colocada, int endereco){
 	//itr - é atribuida a ela o par cuja chave é a pagina que saiu da memoria principal
 	std::map<int,int>::iterator itr = tabela.lower_bound(pagina_saiu);
-	
+     
 	//apaga par que itr aponta
 	tabela.erase(itr);
-	
+     
 	//insere novo par no mapa
 	tabela.insert(std::pair<int,int>(pagina_colocada,endereco));
-}
+};
+
+void gerenciadorMemoria::iniciaTabela(int pagina_colocada, int endereco){
+	//insere novo par no mapa
+	tabela.insert(std::pair<int,int>(pagina_colocada,endereco));
+};
