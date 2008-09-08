@@ -34,7 +34,7 @@ int main(){
              
              // Alocando instruções à página
              for(h=0; h < alocada.tamanhoPagina && i < linhas; h++, i++){                 
-                 if(h+1 == alocada.tamanhoPagina){
+                 if(h+1 == linhas){
                    nomeInstrucao = "finito!";
                  }else{                        
                     nomeInstrucao = "Instrucao ";// + i;
