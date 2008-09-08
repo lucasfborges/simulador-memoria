@@ -50,8 +50,11 @@ void gerenciadorProcessos::carregarPaginas(memorias *realocar, string nomeProces
      // definindo a última página desse processo disponível na memória física
      ultimaPagina = endereco / sidePagina.tamanhoPagina;
      
-     for (; j < realocar->limiteFisica; j++, ultimaPagina++){
+     for (; j < realocar->limiteFisica && ultimaPagina < realocar->finalVirtual; j++, ultimaPagina++){
           sidePagina = realocar->memoriaVirtual[ultimaPagina];
+          
+          cout << "Roll mr ultima:" << ultimaPagina << "  e final Virtual: " << realocar->finalVirtual << endl;
+           system("pause");
           
           // checa se a página em questão ainda pertence ao mesmo processo
           if(sidePagina.processo != nomeProcesso){
@@ -63,8 +66,14 @@ void gerenciadorProcessos::carregarPaginas(memorias *realocar, string nomeProces
              
              realocar->memoriaFisica[j] = realocar->memoriaVirtual[ultimaPagina];
              
+             cout << "Sai: " << paginaSai << "  e entra: " << paginaEntra << endl;
+           system("pause");
+             
+             
              // Atualizar o estado da tabela de tradução do gerenciador de memória            
              tabela.atualizaTabela(paginaSai, paginaEntra, j);
+             cout << "Roll mr." << endl;
+           system("pause");
           }          
      }       
 };
