@@ -28,5 +28,9 @@ class gerenciadorMemoria{
         //parâmetros: pagina que saiu da memoria fisica, pagina que foi
         //colocada na memória fisica, endereço(fisico ou virtual)?
         void atualizaTabela(int pagina_saiu, int pagina_colocada, int endereco);
+        
+        // Mesmo que anterior, mas apenas insere
+        void iniciaTabela(int pagina_colocada, int endereco);
+        
 };
 #endif
